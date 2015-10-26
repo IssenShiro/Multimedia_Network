@@ -52,6 +52,7 @@ private slots:
     void chooseOutputPath();
     void clearInputPath();
     void clearOutputPath();
+    void nameChanged(QString);
     //void goToVideoOpt();
     //void goToImageOpt();
     //void goToAudioOpt();

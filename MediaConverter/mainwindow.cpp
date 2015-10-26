@@ -42,6 +42,7 @@ void MainWindow::connect_slots()
     connect(ui->aboutBackButton, SIGNAL(clicked()), this, SLOT(backToHome()));
     connect(ui->resultBackButton, SIGNAL(clicked()), this, SLOT(backToHome()));
     connect(ui->outputBackButton, SIGNAL(clicked()), this, SLOT(backToInput()));
+    connect(ui->outputPath, SIGNAL(textChanged(QString)), this, SLOT(nameChanged(QString)));
     this->addRadioGroup();
 }
 
@@ -157,6 +158,11 @@ void MainWindow::chooseOutputPath()
     ui->outputPath->setText(path);
     this->setPathOutput(path);
     ui->outputStartButton->setEnabled(true);
+}
+
+void MainWindow::nameChanged(QString name)
+{
+    this->setFilename(name);
 }
 
 void MainWindow::clearInputPath()
