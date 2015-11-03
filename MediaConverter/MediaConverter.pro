@@ -12,9 +12,18 @@ TARGET = MediaConverter
 TEMPLATE = app
 
 INCLUDEPATH += $$_PRO_FILE_PWD_\
-            /usr/local/include/
+            /usr/local/include/ \
+            /opt/X11/include/ \
+            /usr/local/libjpeg/ \
+            /usr/local/libtiff/ \
+            /usr/local/libpng \
+            /usr/local/include/lame \
 
-#LIBS += -L/usr/local/lib/libmp3lame.dylib -lpsapi
+LIBS += -L/opt/X11/lib -lX11 \
+        -L/usr/local/libjpeg/lib -ljpeg \
+        -L/usr/local/libtiff/lib -ltiff \
+        -L/usr/local/libpng/ -lpng \
+        -L/usr/local/lib/ -lmp3lame
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -26,6 +35,7 @@ HEADERS  += mainwindow.h \
     imageconversion.h \
     videoconversion.h \
     audioconversion.h \
-    namespace_lib.h
+    namespace_lib.h \
+    CImg.h
 
 FORMS    += mainwindow.ui

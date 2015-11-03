@@ -1,5 +1,4 @@
 #include "audioconversion.h"
-#include "lame/lame.h"
 
 void AudioConversion::convertAudio(QString pathInput, QString pathOutput, QString filename, QString format)
 {

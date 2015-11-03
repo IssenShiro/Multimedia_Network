@@ -42,7 +42,7 @@ void MainWindow::connect_slots()
     connect(ui->aboutBackButton, SIGNAL(clicked()), this, SLOT(backToHome()));
     connect(ui->resultBackButton, SIGNAL(clicked()), this, SLOT(backToHome()));
     connect(ui->outputBackButton, SIGNAL(clicked()), this, SLOT(backToInput()));
-    connect(ui->outputPath, SIGNAL(textChanged(QString)), this, SLOT(nameChanged(QString)));
+    connect(ui->outputFilename, SIGNAL(textChanged(QString)), this, SLOT(nameChanged(QString)));
     this->addRadioGroup();
 }
 
@@ -97,6 +97,8 @@ void MainWindow::goToOutput()
 {
     //this->conversionMethod
     qDebug("conversion method : %s", this->getConversionMethod().toStdString().c_str());
+    qDebug("filename : %s", this->getFilename().toStdString().c_str());
+
     ui->outputStartButton->setEnabled(false);
     ui->outputFilename->setText(this->getFilename());
     ui->stackedWidget->setCurrentWidget(ui->OutputConverter);
@@ -272,6 +274,7 @@ void MainWindow::onGroupButtonPressed(int number)
     QString type = this->getConversionType();
     int total = 4;
     qDebug("conversion type : %s, number : %d", this->getConversionType().toStdString().c_str(), number+total);
+    qDebug("filename : %s", this->getFilename().toStdString().c_str());
 
     if(type == "Video")
     {
@@ -291,6 +294,7 @@ void MainWindow::onGroupButtonPressed(int number)
 
 void MainWindow::startConversion()
 {
+    qDebug("filename : %s", this->getFilename().toStdString().c_str());
     if(this->getConversionType() == "Audio")
     {
         AudioConversion myObject;
