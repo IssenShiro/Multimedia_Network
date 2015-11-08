@@ -18,12 +18,15 @@ INCLUDEPATH += $$_PRO_FILE_PWD_\
             /usr/local/libtiff/ \
             /usr/local/libpng \
             /usr/local/include/lame \
+            /usr/local/include/libavcodec \
+            /usr/local/include/libavformat \
+            #/usr/local/include/libavutil
 
 LIBS += -L/opt/X11/lib -lX11 \
         -L/usr/local/libjpeg/lib -ljpeg \
         -L/usr/local/libtiff/lib -ltiff \
         -L/usr/local/libpng/ -lpng \
-        -L/usr/local/lib/ -lmp3lame
+        -L/usr/local/lib/ -lmp3lame -lavcodec -lavformat \
 
 SOURCES += main.cpp\
         mainwindow.cpp \

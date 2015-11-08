@@ -45,7 +45,7 @@ void ImageConversion::toTiff(QString pathInput, QString pathOutput, QString file
 
     CImg<unsigned char> result;
     result.load_bmp(fileInput);
-    result.save_tiff(output.toStdString().c_str());
+    result.save_tiff(output.toStdString().c_str(), 0);
 }
 
 void ImageConversion::toPng(QString pathInput, QString pathOutput, QString filename, QString format)

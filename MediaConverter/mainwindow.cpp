@@ -4,7 +4,7 @@
 #include "imageconversion.h"
 #include "videoconversion.h"
 
-QString VideoList[6] = {"MP4", "3GP", "MKV"};
+QString VideoList[6] = {"MP4", "3GP", "M4V"};
 QString ImageList[6] = {"JPEG", "TIFF", "PNG"};
 QString AudioList[6] = {"MP3", "AAC", "FLAC"};
 
@@ -79,8 +79,8 @@ void MainWindow::goToAudioConv()
     ui->inputConverterTypeLabel->setText("Audio Converter");
     ui->inputLabel->setText("Pilih file dengan format .wav untuk di konversi");
     ui->inputRadioButton1->setText("MP3");
-    ui->inputRadioButton2->setText("AAC");
-    ui->inputRadioButton3->setText("FLAC");
+    ui->inputRadioButton2->hide();
+    ui->inputRadioButton3->hide();
     ui->inputNextButton->setEnabled(false);
     this->setConversionType("Audio");
     ui->inputRadioButton1->setChecked(true);
@@ -185,6 +185,9 @@ void MainWindow::backToHome()
 {
     this->clearVars();
     this->clearUi();
+    ui->inputRadioButton1->show();
+    ui->inputRadioButton2->show();
+    ui->inputRadioButton3->show();
     ui->stackedWidget->setCurrentWidget(ui->Home);
 }
 

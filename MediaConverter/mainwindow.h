@@ -21,12 +21,18 @@ public:
     void setFilename(QString);
     void setConversionType(QString);
     void setConversionMethod(QString);
+    void setBitRate(QString);
+    void setFrameRate(QString);
+    void setCompressionRatio(QString);
 
     QString getPathInput();
     QString getPathOutput();
     QString getFilename();
     QString getConversionType();
     QString getConversionMethod();
+    QString getBitRate();
+    QString getFrameRate();
+    QString getCompressionRatio();
 
     //QString getPathInput();
     //QString getPathOutput();
@@ -71,6 +77,10 @@ private:
     QString filename;
     QString conversionType;
     QString conversionMethod;
+    QString bitRate;
+    QString framerate;
+    QString compressionRatio;
+
 };
 
 #endif // MAINWINDOW_H
